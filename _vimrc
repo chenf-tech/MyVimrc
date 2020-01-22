@@ -105,13 +105,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'blinkjum/MyMolokai'
 Plug 'jiangmiao/auto-pairs'             " 括号补全
 Plug 'scrooloose/nerdcommenter'         " 注释
-" Plug 't9md/vim-quickhl'                 " 关键字高亮
+Plug 't9md/vim-quickhl'                 " 关键字高亮
 " Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-easytags'   " 着色方案 依赖vim-misc
 Plug 'abudden/taghighlight-automirror'
 " Plug 'octol/vim-cpp-enhanced-highlight'
-" Plug 'justinmk/vim-syntax-extra'
-" Plug 'vim-scripts/taghighlight'
+" Plug 'justinmk/vim-syntax-extra'          " 着色方案 依赖vim-cpp-enhanced-highlight
+" Plug 'vim-scripts/taghighlight'  " 和taghighlight-automirror相同
 Plug 'vim-scripts/a.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
@@ -227,7 +227,7 @@ call plug#end()
     let g:airline#extensions#whitespace#enabled=0
     function! AirlineInit()
         " let g:airline_section_a = airline#section#create(['mode'])
-        let g:airline_section_c = airline#section#create_left(['%F%m%r%h%w|[ASCII=%02.4B]'])
+        let g:airline_section_c = airline#section#create_left(['%f%m%r%h%w|[ASCII=%02.4B]'])
         " let g:airline_section_c = airline#section#create(['%{getcwd()}'])
     endfunction
     autocmd User AirlineAfterInit call AirlineInit()
@@ -562,7 +562,8 @@ call plug#end()
  " set relativenumber
  "设置行号颜色
  " highlight LineNr guifg=#A4D3EE
- highlight LineNr guifg=#FFFF00
+ " highlight LineNr guifg=#FFFF00
+ highlight LineNr guifg=#BDB76B
  "设置行号背景色
  " highlight LineNr guibg=#1f1f1f
  highlight LineNr guibg=#323232
